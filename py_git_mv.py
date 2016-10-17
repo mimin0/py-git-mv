@@ -1,5 +1,3 @@
-#!/usr/bin/python
-
 import os
 
 ##Create list of files and folders
@@ -18,16 +16,12 @@ def createNewStructure():
 
 ##Read list of file into array
 for root, directories, filenames in os.walk('/Users/vitalik/git/python/test'):
-    for directory in directories:
-            print os.path.join(root, directory) 
-            print "root -- %s" %root
-    #for filename in filenames:
-            #print os.path.join(root,filename)
+	for directory in directories:
+		print os.path.join(root, directory) 
+		print "root -- %s" %root
+	#for filename in filenames:
+		#print os.path.join(root,filename)
 
 ##Compare files and show result
-
-
 ## GIT move
-
-
 ## Show resul of movement 
