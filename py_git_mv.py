@@ -15,12 +15,27 @@ def createNewStructure():
 #createNewStructure()
 
 ##Read list of file into array
-for root, directories, filenames in os.walk('/Users/vitalik/git/python/test'):
-	for directory in directories:
-		print os.path.join(root, directory) 
-		print "root -- %s" %root
-	#for filename in filenames:
+oldPath = '/Users/vitalik/git/python/test'
+newPath = '/Users/vitalik/git/python/testNew'
+for root, directories, filenames in os.walk(oldPath):
+	#for directory in directories:
+		#print os.path.join(root, directory) 
+		#print "root -- %s" %root
+	for filename in filenames:
 		#print os.path.join(root,filename)
+		#print "PATH: %s NAME: %s" %(root, filename)
+		oldFile = os.path.join(root, filename)
+		##http://stackoverflow.com/questions/3964681/find-all-files-in-directory-with-extension-txt-in-python
+		for newRoot, dirs, files in os.walk(newPath):
+			if filename in files:
+				#print "found coinsedence %s %s" %(newRoot, filename)
+				newFile = os.path.join(newRoot, filename)
+			else:
+				newFile = "-"
+
+		print oldFile, newFile
+		#result.append(oldFile,newFile)
+		#print "found coinsedence %s" %(newRoot, filename)
 
 ##Compare files and show result
 ## GIT move
